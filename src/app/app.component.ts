@@ -12,7 +12,7 @@ import { Subject } from 'rxjs/Subject';
 export class AppComponent implements OnInit {
 
 
-
+  query = null;
   results: Object;
   searchTerm$ = new Subject<string>();
 
@@ -29,6 +29,8 @@ export class AppComponent implements OnInit {
 
   select(item) {
 
+    this.results = [];
+    this.query = item.name;
     console.log(item);
 
   }
