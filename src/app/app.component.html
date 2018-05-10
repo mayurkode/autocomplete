@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1> Autocomplete using Custom Component and AJAX</h1>
+search query : 
+<input
+    (keyup)="searchTerm$.next($event.target.value)">
+
+<ul *ngIf="results">
+  <li *ngFor="let result of results | slice:0:9">
+    <a href="#" (click)="select(result)">
+      {{ result.name }}
+    </a>
+  </li>
+</ul>
